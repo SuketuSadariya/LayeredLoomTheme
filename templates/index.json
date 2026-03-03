@@ -65,7 +65,7 @@
             "text_L3tULC": {
               "type": "text",
               "settings": {
-                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "text": "<p>Introducing our first Collection. Designed different. Printed with purpose. Explore the glow.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -161,7 +161,7 @@
             "text_DXfjfX": {
               "type": "text",
               "settings": {
-                "text": "<p>Discover the bestsellers that have captured the hearts of our customers with their perfect blend of functionality and style.</p>",
+                "text": "<p>Small-batch designs crafted in limited numbers. Grab yours before the light fades.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
