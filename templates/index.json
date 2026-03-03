@@ -502,11 +502,87 @@
         "padding-block-start": 100,
         "padding-block-end": 72
       }
+    },
+    "media_with_content_CUWJeC": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/Designed_For_Future.png",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-end",
+            "vertical_alignment_flex_direction_column": "space-between",
+            "gap": 25
+          },
+          "blocks": {
+            "jumbo_text_MMcnrX": {
+              "type": "jumbo-text",
+              "name": "t:names.jumbo_text",
+              "settings": {
+                "text": "Designed\nFor\nFuture",
+                "font": "heading",
+                "alignment": "right",
+                "line_height": "1.2",
+                "letter_spacing": "normal",
+                "case": "uppercase",
+                "text_effect": "blur",
+                "animation_repeat": false
+              },
+              "blocks": {}
+            },
+            "button_edAGzC": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Learn More",
+                "link": "shopify://pages/about-us",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "jumbo_text_MMcnrX",
+            "button_edAGzC"
+          ]
+        }
+      },
+      "name": "t:names.editorial_jumbo_text",
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "color_scheme": "scheme-3",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "slideshow_RtNH7r",
     "product_list_fa6P9H",
-    "hero_jVaWmY"
+    "hero_jVaWmY",
+    "media_with_content_CUWJeC"
   ]
 }
