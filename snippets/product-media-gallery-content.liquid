@@ -24,8 +24,15 @@
 {%- endif -%}
 {%- liquid
   assign selected_product = closest.product
-  assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
+  assign selected_variant = selected_product.selected_or_first_available_variant
+  assign selected_variant_media = selected_variant.featured_media
   assign first_3d_model = selected_product.media | where: 'media_type', 'model' | first
+
+  assign variant_gallery_images = selected_variant.metafields.custom.variant_gallery.value
+  assign use_metafield_gallery = false
+  if variant_gallery_images != blank and variant_gallery_images.size > 0
+    assign use_metafield_gallery = true
+  endif
 
   if block_settings.hide_variants
     assign variant_images = selected_product.images | where: 'attached_to_variant?', true | map: 'src'
@@ -60,14 +67,25 @@
   endif
 
   assign slideshow_controls_style = block_settings.slideshow_controls_style
+
+  # Pre-calculate total media count (sorted_media is built later but count is needed now)
+  if use_metafield_gallery
+    assign total_media_count = variant_gallery_images.size
+    if selected_variant_media
+      assign total_media_count = total_media_count | plus: 1
+    endif
+  else
+    assign total_media_count = selected_product.media.size
+  endif
+
   # Use a counter instead of dots when there are many images to avoid cropping/overflow.
-  if slideshow_controls_style == 'dots' and selected_product.media.size > 15
+  if slideshow_controls_style == 'dots' and total_media_count > 15
     assign slideshow_controls_style = 'counter'
   endif
 
   assign render_slideshow_arrows = false
 
-  if selected_product.media.size <= 1
+  if total_media_count <= 1
     assign slideshow_class = 'product-media-gallery__slideshow--single-media slideshow--single-media'
   else
     assign slideshow_class = ''
@@ -100,7 +118,12 @@
   endif
 
   assign sorted_media = '' | split: ','
-  if selected_variant_media
+  if use_metafield_gallery
+    # Variant has custom gallery images — show only featured variant media + metafield images
+    if selected_variant_media
+      assign sorted_media = sorted_media | concat: selected_product.media | where: 'id', selected_variant_media.id
+    endif
+  elsif selected_variant_media
     assign sorted_media = sorted_media | concat: selected_product.media | where: 'id', selected_variant_media.id
 
     for media in selected_product.media
@@ -116,11 +139,16 @@
   else
     assign sorted_media = selected_product.media
   endif
-  assign has_image_drop = sorted_media | has: 'media_type', 'image'
+
+  if use_metafield_gallery
+    assign has_image_drop = true
+  else
+    assign has_image_drop = sorted_media | has: 'media_type', 'image'
+  endif
 
   # Determine if we're in single column mode (carousel or grid with one column)
   assign is_single_column = false
-  if media_presentation == 'carousel' or sorted_media.size == 1 or media_presentation == 'grid' and block_settings.media_columns == 'one'
+  if media_presentation == 'carousel' or total_media_count == 1 or media_presentation == 'grid' and block_settings.media_columns == 'one'
     assign is_single_column = true
   endif
 
@@ -171,6 +199,17 @@
         endif
       endif
     endfor
+
+    if use_metafield_gallery
+      for image in variant_gallery_images
+        if image and image.aspect_ratio
+          if image.aspect_ratio < lowest_aspect_ratio
+            assign lowest_aspect_ratio = image.aspect_ratio
+            assign lowest_aspect_ratio_index = forloop.index0 | plus: sorted_media.size
+          endif
+        endif
+      endfor
+    endif
   endif
 -%}
 {%- if has_image_drop -%}
@@ -394,15 +433,145 @@
           media_fit: block_settings.media_fit,
         %}
       {% endfor %}
+
+      {% if use_metafield_gallery %}
+        {% for image in variant_gallery_images %}
+          {%- assign meta_index = forloop.index0 | plus: sorted_media.size -%}
+          {% capture children %}
+            {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
+              <div class="product-media-constraint-wrapper">
+                <div class="product-media" style="--ratio: {{ image.aspect_ratio | default: 1.0 }}">
+                  {{
+                    image
+                    | image_url: width: 3840
+                    | image_tag:
+                      widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+                      alt: image.alt,
+                      sizes: sizes,
+                      loading: 'lazy',
+                      class: 'product-media__image',
+                      fetchpriority: 'auto'
+                  }}
+                </div>
+              </div>
+            {% else %}
+              <div class="product-media" style="--ratio: {{ image.aspect_ratio | default: 1.0 }}">
+                {{
+                  image
+                  | image_url: width: 3840
+                  | image_tag:
+                    widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+                    alt: image.alt,
+                    sizes: sizes,
+                    loading: 'lazy',
+                    class: 'product-media__image',
+                    fetchpriority: 'auto'
+                }}
+              </div>
+            {% endif %}
+          {% endcapture %}
+          {% capture class %}
+            {{ product_media_container_class }} product-media-container--image{% if block_settings.zoom %} product-media-container--zoomable{% endif %}
+          {% endcapture %}
+          {% if block_settings.aspect_ratio == 'adapt' %}
+            {% capture style %}
+              --media-preview-ratio: {{ image.aspect_ratio | default: 1.0 }};
+            {% endcapture %}
+          {% endif %}
+          {% if block_settings.zoom %}
+            {%- capture attributes -%}on:click="#zoom-dialog-{{ block_id }}/open/{{ meta_index }}"{%- endcapture -%}
+          {% endif %}
+
+          {% render 'slideshow-slide',
+            index: meta_index,
+            children: children,
+            class: class,
+            style: style,
+            attributes: attributes,
+            media_fit: block_settings.media_fit,
+          %}
+        {% endfor %}
+      {% endif %}
     {% endcapture %}
 
-    {% if sorted_media.size > 1 %}
+    {% if total_media_count > 1 %}
       {% capture controls %}
-        {% if render_slideshow_controls %}
+        {% if use_metafield_gallery and slideshow_controls_style == 'thumbnails' and render_slideshow_controls %}
+          {%- comment -%}
+            Render inline thumbnail controls for metafield gallery because
+            concat of product media and metafield file references is incompatible
+            with Liquid's array handling in the slideshow-controls snippet.
+          {%- endcomment -%}
+          <slideshow-controls
+            ref="slideshowControls"
+            pagination-position="{{ pagination_position }}"
+            scroll-mode="{% if pagination_position == 'left' or pagination_position == 'right' %}vertical{% else %}horizontal{% endif %}"
+            thumbnails
+            {% if slideshow_controls_class %}
+              class="{{ slideshow_controls_class }}"
+            {% endif %}
+            {% if block_settings.thumbnail_radius %}
+              style="--thumbnail-radius: {{ block_settings.thumbnail_radius }}px;"
+            {% endif %}
+          >
+            <scroll-hint
+              ref="thumbnailsContainer"
+              class="slideshow-controls__thumbnails-container"
+            >
+              <div class="slideshow-controls__thumbnails">
+                {% for media in sorted_media %}
+                  <button
+                    class="slideshow-control button button-unstyled slideshow-controls__thumbnail"
+                    aria-label="{{ 'accessibility.slide_status' | t: index: forloop.index, length: total_media_count }}"
+                    on:click="/select/{{ forloop.index0 }}"
+                    style="--aspect-ratio: {% if block_settings.aspect_ratio == 'adapt' %}{{ media.preview_image.aspect_ratio | default: 1.0 }}{% else %}{{ block_settings.aspect_ratio }}{% endif %};"
+                    ref="thumbnails[]"
+                    {% if forloop.first %}
+                      aria-selected="true"
+                    {% endif %}
+                  >
+                    {%- liquid
+                      assign focal_point_style = ''
+                      if media.presentation.focal_point != blank
+                        assign focal_point_style = 'object-position: ' | append: media.presentation.focal_point | append: ';'
+                      endif
+                    -%}
+                    {{
+                      media.preview_image
+                      | image_url: width: 144
+                      | image_tag: loading: 'lazy', alt: media.alt, style: focal_point_style
+                      | escape
+                    }}
+                  </button>
+                {% endfor %}
+                {% for image in variant_gallery_images %}
+                  {%- assign meta_index = forloop.index0 | plus: sorted_media.size -%}
+                  <button
+                    class="slideshow-control button button-unstyled slideshow-controls__thumbnail"
+                    aria-label="{{ 'accessibility.slide_status' | t: index: meta_index | plus: 1, length: total_media_count }}"
+                    on:click="/select/{{ meta_index }}"
+                    style="--aspect-ratio: {% if block_settings.aspect_ratio == 'adapt' %}{{ image.aspect_ratio | default: 1.0 }}{% else %}{{ block_settings.aspect_ratio }}{% endif %};"
+                    ref="thumbnails[]"
+                    {% if sorted_media.size == 0 and forloop.first %}
+                      aria-selected="true"
+                    {% endif %}
+                  >
+                    {{
+                      image
+                      | image_url: width: 144
+                      | image_tag: loading: 'lazy', alt: image.alt
+                      | escape
+                    }}
+                  </button>
+                {% endfor %}
+              </div>
+            </scroll-hint>
+          </slideshow-controls>
+        {% elsif render_slideshow_controls %}
           {%- render 'slideshow-controls',
             class: slideshow_controls_class,
             style: slideshow_controls_style,
-            item_count: sorted_media.size,
+            item_count: total_media_count,
             thumbnails: sorted_media,
             controls_on_media: controls_on_media,
             pagination_position: pagination_position,
@@ -415,7 +584,7 @@
           {%- render 'slideshow-controls',
             class: 'desktop:hidden media-gallery__mobile-controls',
             style: block_settings.slideshow_mobile_controls_style,
-            item_count: sorted_media.size,
+            item_count: total_media_count,
             thumbnails: sorted_media,
             controls_on_media: mobile_controls_on_media,
             pagination_position: 'center',
@@ -436,7 +605,7 @@
       ref: 'slideshow',
       class: slideshow_class,
       slides: slides,
-      slide_count: sorted_media.size,
+      slide_count: total_media_count,
       slideshow_arrows: slideshow_arrows,
       arrows_position: icons_position,
       controls: controls
@@ -488,6 +657,60 @@
             {% endif %}
           </li>
         {% endfor %}
+
+        {% if use_metafield_gallery %}
+          {% for image in variant_gallery_images %}
+            {%- assign meta_index = forloop.index0 | plus: sorted_media.size -%}
+            <li
+              ref="media[]"
+              class="{{ product_media_container_class }} product-media-container--image"
+              style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ image.aspect_ratio | default: 1.0 }};{% endif %}"
+            >
+              {%- if block_settings.zoom -%}
+                <button
+                  type="button"
+                  class="button button-unstyled product-media-container__zoom-button"
+                  aria-label="{{ 'actions.zoom' | t }}"
+                  on:click="/zoom/{{ meta_index }}"
+                  on:pointerenter="/preloadImage/{{ meta_index }}"
+                >
+                  <span class="visually-hidden">{{ 'actions.open_image_in_full_screen' | t }}</span>
+                </button>
+              {%- endif -%}
+              {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
+                <div class="product-media-constraint-wrapper">
+                  <div class="product-media" style="--ratio: {{ image.aspect_ratio | default: 1.0 }}">
+                    {{
+                      image
+                      | image_url: width: 3840
+                      | image_tag:
+                        widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+                        alt: image.alt,
+                        sizes: sizes,
+                        loading: 'lazy',
+                        class: 'product-media__image',
+                        fetchpriority: 'auto'
+                    }}
+                  </div>
+                </div>
+              {% else %}
+                <div class="product-media" style="--ratio: {{ image.aspect_ratio | default: 1.0 }}">
+                  {{
+                    image
+                    | image_url: width: 3840
+                    | image_tag:
+                      widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+                      alt: image.alt,
+                      sizes: sizes,
+                      loading: 'lazy',
+                      class: 'product-media__image',
+                      fetchpriority: 'auto'
+                  }}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
       </ul>
     {% endif %}
 
@@ -516,7 +739,7 @@
               class="dialog-thumbnails-list list-unstyled"
               ref="thumbnails"
             >
-              {% if sorted_media.size > 1 %}
+              {% if total_media_count > 1 %}
                 {%- for media in sorted_media -%}
                   {% liquid
                     assign aspect_ratio = block_settings.aspect_ratio
@@ -554,6 +777,40 @@
                     }}
                   </button>
                 {%- endfor -%}
+
+                {% if use_metafield_gallery %}
+                  {%- for image in variant_gallery_images -%}
+                    {%- assign meta_index = forloop.index0 | plus: sorted_media.size -%}
+                    {% liquid
+                      assign zoom_aspect_ratio = block_settings.aspect_ratio
+                      if block_settings.aspect_ratio == 'adapt'
+                        assign zoom_aspect_ratio = image.aspect_ratio | default: 1.0
+                      endif
+                    %}
+                    <button
+                      type="button"
+                      class="button button-unstyled dialog-thumbnails-list__thumbnail"
+                      aria-label="{{ 'accessibility.scroll_to' | t: title: image.alt | default: 'image' }}"
+                      on:click="/handleThumbnailClick/{{ meta_index }}"
+                      on:pointerenter="/handleThumbnailPointerEnter/{{ meta_index }}"
+                      style="--aspect-ratio: {{ zoom_aspect_ratio }}; --gallery-aspect-ratio: {{ zoom_aspect_ratio }};"
+                      {% if sorted_media.size == 0 and forloop.first %}
+                        aria-selected="true"
+                      {% endif %}
+                    >
+                      {{
+                        image
+                        | image_url: width: 1024
+                        | image_tag:
+                          loading: 'lazy',
+                          sizes: 'auto, 110, (min-width: 750px) 160',
+                          widths: '240, 352, 832, 1200',
+                          alt: image.alt
+                        | escape
+                      }}
+                    </button>
+                  {%- endfor -%}
+                {% endif %}
               {% endif %}
             </scroll-hint>
           </div>
@@ -590,6 +847,33 @@
                 {% endif %}
               </li>
             {%- endfor -%}
+
+            {% if use_metafield_gallery %}
+              {%- for image in variant_gallery_images -%}
+                <li
+                  class="{{ product_media_container_class | remove: 'media-fit-cover' }} product-media-container--image product-media-container--zoomable"
+                  style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ image.aspect_ratio | default: 1.0 }};{% endif %}"
+                  ref="media[]"
+                  on:click="/close"
+                >
+                  <drag-zoom-wrapper class="product-media__drag-zoom-wrapper">
+                    <div class="product-media" style="--ratio: {{ image.aspect_ratio | default: 1.0 }}">
+                      {{
+                        image
+                        | image_url: width: 3840
+                        | image_tag:
+                          widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+                          alt: image.alt,
+                          sizes: '100vw',
+                          loading: 'lazy',
+                          class: 'product-media__image',
+                          ref: 'image'
+                      }}
+                    </div>
+                  </drag-zoom-wrapper>
+                </li>
+              {%- endfor -%}
+            {% endif %}
           </ul>
         </dialog>
       </zoom-dialog>
