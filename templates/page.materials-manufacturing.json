@@ -168,7 +168,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p><br/>Our products are realized through a curated palette of high-performance, <strong>bio-based polymers</strong> and <strong>recycled composites</strong> that challenge the traditional impact of production.<br/><br/></p>",
+                "text": "<p><br/>Our products are realized through a curated palette of high-performance, <strong>bio-based polymers</strong> and <strong>recycled composites</strong> that challenge the traditional impact of production.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
