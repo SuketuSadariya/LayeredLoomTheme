@@ -650,9 +650,9 @@
         "text_BXKeaR": {
           "type": "text",
           "settings": {
-            "text": "<p>At Layered Loom, Our design philosophy is Human touch, Sustainability and artistic freedom without compromising function of products</p>",
+            "text": "<p>At Layered Loom, we blend human craftsmanship, sustainability, and artistic freedom with functional design. Every product is thoughtfully created to inspire and endure.</p>",
             "width": "100%",
-            "max_width": "narrow",
+            "max_width": "none",
             "alignment": "center",
             "type_preset": "h2",
             "font": "var(--font-body--family)",
@@ -661,7 +661,7 @@
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
-            "color": "var(--color-foreground)",
+            "color": "var(--color-foreground-heading)",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
