@@ -1,6 +1,312 @@
+{% doc %}
+  @prompt
+    a block that can support connecting list of Dynamic dimension values 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-dimension-list-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-dimension-list__heading-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.spacing }}px;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+  }
+
+  .ai-dimension-list__items-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.spacing }}px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-dimension-list__item-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: {{ block.settings.item_padding }}px;
+    background-color: {{ block.settings.item_background_color }};
+    border: {{ block.settings.item_border_width }}px solid {{ block.settings.item_border_color }};
+    border-radius: {{ block.settings.item_border_radius }}px;
+  }
+
+  .ai-dimension-list__label-{{ ai_gen_id }} {
+    color: {{ block.settings.label_color }};
+    font-size: {{ block.settings.label_size }}px;
+    font-weight: 600;
+  }
+
+  .ai-dimension-list__value-{{ ai_gen_id }} {
+    color: {{ block.settings.value_color }};
+    font-size: {{ block.settings.value_size }}px;
+  }
+
+  .ai-dimension-list__empty-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    text-align: center;
+    color: {{ block.settings.label_color }};
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-dimension-list-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-dimension-list-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.heading != blank %}
+    <h3 class="ai-dimension-list__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h3>
+  {% endif %}
+
+  {% liquid
+    assign has_dimensions = false
+    if block.settings.dimension_1 != blank or block.settings.dimension_2 != blank or block.settings.dimension_3 != blank or block.settings.dimension_4 != blank or block.settings.dimension_5 != blank
+      assign has_dimensions = true
+    endif
+  %}
+
+  {% if has_dimensions %}
+    <ul class="ai-dimension-list__items-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign dimension_key = 'dimension_' | append: i %}
+        {% assign dimension_ref = block.settings[dimension_key] %}
+        
+        {% if dimension_ref != blank %}
+          {% assign dimension = metaobjects[dimension_ref] %}
+          {% if dimension %}
+            <li class="ai-dimension-list__item-{{ ai_gen_id }}">
+              <span class="ai-dimension-list__label-{{ ai_gen_id }}">
+                {{ dimension.dimension_name.value }}
+              </span>
+              <span class="ai-dimension-list__value-{{ ai_gen_id }}">
+                {{ dimension.dimension_value.value }}
+              </span>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="ai-dimension-list__empty-{{ ai_gen_id }}">
+      Next, connect dimension metaobjects to display
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Dynamic dimensions",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Dimensions"
+    },
+    {
+      "type": "paragraph",
+      "content": "Connect up to 5 dimension metaobjects. Create a metaobject definition with fields: dimension_name (single line text) and dimension_value (single line text)."
+    },
+    {
+      "type": "metaobject",
+      "id": "dimension_1",
+      "label": "Dimension 1",
+      "metaobject_type": "dimension"
+    },
+    {
+      "type": "metaobject",
+      "id": "dimension_2",
+      "label": "Dimension 2",
+      "metaobject_type": "dimension"
+    },
+    {
+      "type": "metaobject",
+      "id": "dimension_3",
+      "label": "Dimension 3",
+      "metaobject_type": "dimension"
+    },
+    {
+      "type": "metaobject",
+      "id": "dimension_4",
+      "label": "Dimension 4",
+      "metaobject_type": "dimension"
+    },
+    {
+      "type": "metaobject",
+      "id": "dimension_5",
+      "label": "Dimension 5",
+      "metaobject_type": "dimension"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Container padding",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Item spacing",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "label": "Item border radius",
+      "min": 0,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "item_border_width",
+      "label": "Item border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Container background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_border_color",
+      "label": "Item border",
+      "default": "#e6e6e6"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "Value",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "Label size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "value_size",
+      "label": "Value size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic dimensions"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
