@@ -224,7 +224,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#0000008d",
+        "overlay_color": "#0000008c",
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -346,32 +346,6 @@
             "gap": 24
           },
           "blocks": {
-            "text_3w7g9A": {
-              "type": "text",
-              "name": "t:names.caption",
-              "settings": {
-                "text": "<p>Bestseller</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "group_VmzmCP": {
               "type": "group",
               "settings": {
@@ -381,7 +355,7 @@
                 "vertical_alignment": "center",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
@@ -415,18 +389,18 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Our signature product</h2>",
+                    "text": "<h2>More Than Just A Company</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h3",
+                    "type_preset": "h2",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "var(--color-foreground)",
+                    "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -440,11 +414,11 @@
                 "text_Ym7xHz": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Made with care and unconditionally loved by our customers, this signature bestseller exceeds all expectations.</p>",
+                    "text": "<p>What started as a weekend garage improvement project has grown into a passion. We bought our first printer to make our garage tool wall better but with little bit of What if......<br/>We started our first design on a sticky note.</p>",
                     "width": "fit-content",
-                    "max_width": "narrow",
+                    "max_width": "none",
                     "alignment": "left",
-                    "type_preset": "rte",
+                    "type_preset": "h3",
                     "font": "var(--font-body--family)",
                     "font_size": "1rem",
                     "line_height": "normal",
@@ -467,37 +441,21 @@
                 "text_6WYDpN",
                 "text_Ym7xHz"
               ]
-            },
-            "button_J8wfVM": {
-              "type": "button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "text_3w7g9A",
-            "group_VmzmCP",
-            "button_J8wfVM"
+            "group_VmzmCP"
           ]
         }
       },
       "name": "t:names.editorial",
       "settings": {
         "media_position": "left",
-        "media_width": "medium",
+        "media_width": "narrow",
         "media_height": "60svh",
-        "section_width": "full-width",
+        "section_width": "page-width",
         "extend_media": true,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
