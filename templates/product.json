@@ -277,6 +277,104 @@
                     "width": 20
                   },
                   "blocks": {
+                    "group_MJYwd8": {
+                      "type": "group",
+                      "name": "t:names.group",
+                      "settings": {
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "flex-start",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 10,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "text_CaQka6": {
+                          "type": "text",
+                          "name": "t:names.text",
+                          "settings": {
+                            "text": "<p>Size : </p>",
+                            "width": "fit-content",
+                            "max_width": "none",
+                            "alignment": "left",
+                            "type_preset": "rte",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        },
+                        "text_qQqgUD": {
+                          "type": "text",
+                          "name": "t:names.text",
+                          "settings": {
+                            "text": "<p>{{ closest.product.metafields.custom.product_specs.value.width | metafield_tag }} * {{ closest.product.metafields.custom.product_specs.value.lenght | metafield_tag }} * {{ closest.product.metafields.custom.product_specs.value.height | metafield_tag }}</p>",
+                            "width": "fit-content",
+                            "max_width": "none",
+                            "alignment": "left",
+                            "type_preset": "rte",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "text_CaQka6",
+                        "text_qQqgUD"
+                      ]
+                    },
                     "group_kBaWEH": {
                       "type": "group",
                       "name": "t:names.group",
@@ -321,7 +419,7 @@
                           "type": "text",
                           "name": "t:names.text",
                           "settings": {
-                            "text": "<p>Size : </p>",
+                            "text": "<p>Materials : </p>",
                             "width": "fit-content",
                             "max_width": "none",
                             "alignment": "left",
@@ -347,7 +445,7 @@
                           "type": "text",
                           "name": "t:names.text",
                           "settings": {
-                            "text": "<p>{{ closest.product.metafields.custom.product_specs.value.width | metafield_tag }} * {{ closest.product.metafields.custom.product_specs.value.lenght | metafield_tag }} * {{ closest.product.metafields.custom.product_specs.value.height | metafield_tag }}</p>",
+                            "text": "<p>{{ closest.product.metafields.custom.product_specs.value.materials | metafield_tag }}</p>",
                             "width": "fit-content",
                             "max_width": "none",
                             "alignment": "left",
@@ -570,12 +668,112 @@
                         "text_fqtDV6",
                         "text_KKweYr"
                       ]
+                    },
+                    "group_6LJM7B": {
+                      "type": "group",
+                      "name": "t:names.group",
+                      "settings": {
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "flex-start",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 10,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "text_EJ3GmN": {
+                          "type": "text",
+                          "name": "t:names.text",
+                          "settings": {
+                            "text": "<p>Spec Sheet : </p>",
+                            "width": "fit-content",
+                            "max_width": "none",
+                            "alignment": "left",
+                            "type_preset": "rte",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        },
+                        "text_pcz4KY": {
+                          "type": "text",
+                          "name": "t:names.text",
+                          "settings": {
+                            "text": "<p>{{ closest.product.metafields.custom.product_specs.value.spec_sheet | metafield_tag }}</p>",
+                            "width": "fit-content",
+                            "max_width": "none",
+                            "alignment": "left",
+                            "type_preset": "rte",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "text_EJ3GmN",
+                        "text_pcz4KY"
+                      ]
                     }
                   },
                   "block_order": [
+                    "group_MJYwd8",
                     "group_kBaWEH",
                     "group_VzPw9b",
-                    "group_EQgg6r"
+                    "group_EQgg6r",
+                    "group_6LJM7B"
                   ]
                 },
                 "accordion_row_E9P4fM": {
@@ -590,7 +788,7 @@
                     "text_PdFBYQ": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p>Free Shipping Over $100 ! <a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Shipping Policy</a><br/><br/>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -617,19 +815,20 @@
                     "text_PdFBYQ"
                   ]
                 },
-                "accordion_row_qX4V9F": {
+                "accordion_row_Mq9Gde": {
                   "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Manufacturing",
+                    "heading": "Product Care",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
                   "blocks": {
-                    "text_6LEhVw": {
+                    "text_qMVhBi": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                        "text": "<p>Clean with a soft, damp cloth. For disinfection, use a cloth lightly dampened with rubbing alcohol and wipe the surface thoroughly. </p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -653,14 +852,14 @@
                     }
                   },
                   "block_order": [
-                    "text_6LEhVw"
+                    "text_qMVhBi"
                   ]
                 }
               },
               "block_order": [
                 "accordion_row_p7mAPJ",
                 "accordion_row_E9P4fM",
-                "accordion_row_qX4V9F"
+                "accordion_row_Mq9Gde"
               ]
             }
           },
