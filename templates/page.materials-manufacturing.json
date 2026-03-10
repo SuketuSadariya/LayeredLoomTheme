@@ -754,6 +754,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
+                    "image": "shopify://shop_images/Filaments_from_recycled_bottles_b43b2f160d.jpg",
                     "link": "",
                     "image_ratio": "square",
                     "width": "fill",
@@ -776,7 +777,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Quality you can feel</h2>",
+                    "text": "<h2>Recycled</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -802,7 +803,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>The production of PLA uses significantly less energy and emits fewer greenhouse gases compared to petroleum-based plastics like PET or PS.</p>",
+                    "text": "<p>Our on-demand process actively diverts waste from landfills. By using recycled filament, we turn yesterday's plastics into functional, aesthetic design pieces that were crafted to last, not to be stored.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
