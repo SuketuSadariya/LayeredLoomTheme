@@ -15,6 +15,7 @@
         "text_dtcVtP": {
           "type": "text",
           "name": "t:names.heading",
+          "disabled": true,
           "settings": {
             "text": "<p>Design That Lasts, Impact That Doesn't.</p>",
             "width": "100%",
@@ -46,8 +47,8 @@
         "content_direction": "column",
         "gap": 15,
         "color_scheme": "",
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "hero_PJMXBL": {
@@ -556,7 +557,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Uncompromising standards </p>",
+                    "text": "<p>Biodegradable </p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -582,7 +583,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Plant-based biopolymers are designed to be <strong>biodegradable or compostable</strong>, helping to reduce long-term landfill waste and environmental pollution.<br/><br/></p>",
+                    "text": "<p>Plant-based biopolymers are designed to be <strong>biodegradable or compostable</strong>, helping to reduce long-term landfill waste and environmental pollution.<br/></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -643,8 +644,9 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
+                    "image": "shopify://shop_images/Low_Carbon_Emmision.jpg",
                     "link": "",
-                    "image_ratio": "adapt",
+                    "image_ratio": "square",
                     "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
@@ -653,7 +655,7 @@
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
-                    "border_radius": 0,
+                    "border_radius": 15,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -665,7 +667,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Made to last </p>",
+                    "text": "<p>Renewable</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -691,7 +693,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Pieces that only get better with time and wear </p>",
+                    "text": "<p>The production of PLA uses significantly less energy and emits fewer greenhouse gases compared to petroleum-based plastics like PET or PS.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -753,7 +755,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "link": "",
-                    "image_ratio": "adapt",
+                    "image_ratio": "square",
                     "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
@@ -762,7 +764,7 @@
                     "border": "none",
                     "border_width": 1,
                     "border_opacity": 100,
-                    "border_radius": 0,
+                    "border_radius": 15,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -800,7 +802,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Authentic materials, no compromises </p>",
+                    "text": "<p>The production of PLA uses significantly less energy and emits fewer greenhouse gases compared to petroleum-based plastics like PET or PS.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -904,7 +906,7 @@
                 "vertical_alignment": "center",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-end",
                 "gap": 6,
                 "width": "custom",
                 "custom_width": 100,
@@ -938,7 +940,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Materials</p>",
+                    "text": "<p>Manufacturing: Precision on Demand</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -969,7 +971,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p><br/>Our products are realized through a curated palette of high-performance, <strong>bio-based polymers</strong> and <strong>recycled composites</strong> that challenge the traditional impact of production.<br/><br/></p>",
+                "text": "<p><br/>Our products are realized through a curated palette of high-performance, <strong>bio-based polymers</strong> and <strong>recycled composites</strong> that challenge the traditional impact of production.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -1041,9 +1043,9 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><br/> By sourcing resins derived from renewable foundations—such as corn-starch and sugar beet—we utilize materials that are carbon-neutral in their cultivation and durable in their application. These aren't just raw materials; they are the building blocks of a circular economy. Through the precision of additive manufacturing, we transform these sustainable filaments into complex, organic geometries that remain lightweight yet structurally uncompromising, proving that the most sophisticated designs can leave the lightest footprints.<br/><br/></p>",
+            "text": "<p>Traditional manufacturing is a game of waste—massive molds, thousands of unsold items sitting in warehouses, and scraps left on the factory floor. We do things differently. We use <strong>Additive Manufacturing</strong>, a process where your product is built layer-by-layer, only using the exact amount of material needed. This 'on-demand' model means we don't overproduce, and we can achieve complex, organic geometries that are physically impossible to create any other way.</p>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "none",
             "alignment": "left",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
