@@ -12,6 +12,7 @@
     "logo": "{{ shop.brand.logo }}",
     "logo_height": 50,
     "logo_height_mobile": 50,
+    "favicon": "shopify://shop_images/LayereLoomLogo_TBG.png",
     "type_body_font": "nunito_sans_n5",
     "type_subheading_font": "nunito_sans_n6",
     "type_heading_font": "nunito_sans_n7",
