@@ -149,7 +149,7 @@
                 "text_GVyAUN": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We are unable to accept returns on certain items. These will be carefully marked before purchase.</p>",
+                    "text": "<p>If you have issues with your product please contact us at 3dlayeredcreations@gmail.com. we always try to recycle so we will send you parts and instructions if we can. Warranty is only on 3d printed parts that are manufactured by Layered Loom. </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -190,7 +190,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                    "text": "<p>Most of our products require no or very less assembly. We provide detailed instructions with your product on how to assemble them. Refer to product page for detailed specification sheet.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -231,7 +231,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                    "text": "<p>Wipe your product with damp cloth or apply some rubbing alcohol to cloth. Please make sure to unplug any electrical connections before performing any maintenance on products.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -374,7 +374,7 @@
                 "text_U7YEXR": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                    "text": "<p>Our typical delivery times are 3-4 weeks because our products are made to order. <br/>Please contact us if you haven't received any update in 4 weeks. </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -413,7 +413,7 @@
                 "text_GdaDbH": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We are unable to accept returns on certain items. These will be carefully marked before purchase.</p>",
+                    "text": "<p>Our shipping cost depends on location and urgency after your order is ready.  Please refer to <a href=\"/policies/shipping-policy\" target=\"_blank\" title=\"Shipping Policy\">Shipping policy</a> on free shipping.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -454,7 +454,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                    "text": "<p>You can edit/cancel your order if it hasn't shipped. Please contact us if you like to cancel your order after is has shipped we will guide you for return process. </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -495,7 +495,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Shipping is calculated based on your location and the items in your order. You will always know the shipping price before you purchase.</p>",
+                    "text": "<p>Contact us at 3dlayeredcreations@gmail.com withing 14 days of receiving your product with a brief explanation. We only accept unaltered and unused products in their original packaging . </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -536,7 +536,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                    "text": "<p>After we have received your product, Refund with be transferred to your original mode of payment within 10-14 business days.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -680,7 +680,7 @@
                 "text_LNiFQy": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                    "text": "<p>Drops are one of a kind unique designed that are only made in limited quantity. Our standard drop count is 100.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -719,7 +719,7 @@
                 "text_zTRWNc": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We are unable to accept returns on certain items. These will be carefully marked before purchase.</p>",
+                    "text": "<p>No, Once the drop is gone its gone forever.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -760,7 +760,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                    "text": "<p>We will try to accommodate and provide repairs for your drops due to nature of limited availability we want you to have your drop forever. Please contact us for further drop specific questions.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
