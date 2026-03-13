@@ -257,55 +257,13 @@
               "block_order": [
                 "text_bYgi8z"
               ]
-            },
-            "accordion_row_c9FQUQ": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "How much does shipping cost?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_63DNxG": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Shipping is calculated based on your location and the items in your order. You will always know the shipping price before you purchase.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_63DNxG"
-              ]
             }
           },
           "block_order": [
             "accordion_row_mxcpkX",
             "accordion_row_y9pREH",
             "accordion_row_DPD3rt",
-            "accordion_row_VBL7YK",
-            "accordion_row_c9FQUQ"
+            "accordion_row_VBL7YK"
           ]
         }
       },
@@ -363,7 +321,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>Frequently asked questions</h3>",
+            "text": "<h3>Shipping and Returns</h3>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -407,7 +365,7 @@
             "accordion_row_Cz6Lna": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the return policy?",
+                "heading": "When will my order ship?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -446,7 +404,7 @@
             "accordion_row_XdhepR": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Are any purchases final sale?",
+                "heading": "How much does shipping cost?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -486,7 +444,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "When will I get my order?",
+                "heading": "Can i cancel my order?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -523,52 +481,11 @@
                 "text_yxc4YP"
               ]
             },
-            "accordion_row_AKRkHw": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Where are your products manufactured?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_TzWiz7": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_TzWiz7"
-              ]
-            },
             "accordion_row_R7J4mH": {
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "How much does shipping cost?",
+                "heading": "What’s your return policy?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -604,14 +521,55 @@
               "block_order": [
                 "text_W8bwGd"
               ]
+            },
+            "accordion_row_AKRkHw": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "When can I expect my refund?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_TzWiz7": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_TzWiz7"
+              ]
             }
           },
           "block_order": [
             "accordion_row_Cz6Lna",
             "accordion_row_XdhepR",
             "accordion_row_tr8jf8",
-            "accordion_row_AKRkHw",
-            "accordion_row_R7J4mH"
+            "accordion_row_R7J4mH",
+            "accordion_row_AKRkHw"
           ]
         }
       },
@@ -669,7 +627,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>Frequently asked questions</h3>",
+            "text": "<h3>Drops</h3>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -713,7 +671,7 @@
             "accordion_row_3FJtHN": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the return policy?",
+                "heading": "What are drops?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -752,7 +710,7 @@
             "accordion_row_Tj8Vir": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Are any purchases final sale?",
+                "heading": "Will you ever re-release a drop?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -792,7 +750,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "When will I get my order?",
+                "heading": "My Drop is broken ??!!",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -828,96 +786,12 @@
               "block_order": [
                 "text_BdiHNW"
               ]
-            },
-            "accordion_row_qriVJY": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Where are your products manufactured?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_h4YRKe": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_h4YRKe"
-              ]
-            },
-            "accordion_row_jVG4Qh": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "How much does shipping cost?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_nezAzp": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Shipping is calculated based on your location and the items in your order. You will always know the shipping price before you purchase.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_nezAzp"
-              ]
             }
           },
           "block_order": [
             "accordion_row_3FJtHN",
             "accordion_row_Tj8Vir",
-            "accordion_row_FyBwy9",
-            "accordion_row_qriVJY",
-            "accordion_row_jVG4Qh"
+            "accordion_row_FyBwy9"
           ]
         }
       },
