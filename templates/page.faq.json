@@ -57,7 +57,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>Frequently asked questions</h3>",
+            "text": "<h3>Products</h3>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -101,7 +101,7 @@
             "accordion_row_mxcpkX": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the return policy?",
+                "heading": "How are your products made?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -110,7 +110,7 @@
                 "text_FpiB9p": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                    "text": "<p>Our 3D printed products are crafted from recycled plastic in our Philadelphia studio. Each product page includes detailed material specifications so you can learn exactly what your product is made from.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -140,7 +140,7 @@
             "accordion_row_y9pREH": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Are any purchases final sale?",
+                "heading": "Do you provide warranty on products?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -180,7 +180,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "When will I get my order?",
+                "heading": "How do i assemble my product?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -221,7 +221,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "Where are your products manufactured?",
+                "heading": "How do i care for my product?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
