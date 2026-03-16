@@ -152,9 +152,9 @@
               "static": true,
               "settings": {
                 "font": "var(--font-heading--family)",
-                "weight": "",
+                "weight": "700",
                 "line_height": "normal",
-                "letter_spacing": "normal",
+                "letter_spacing": "loose",
                 "case": "none"
               },
               "blocks": {}
