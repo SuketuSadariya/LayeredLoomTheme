@@ -136,56 +136,109 @@
         "padding-block-end": 0
       }
     },
-    "collection_links_3irxgN": {
-      "type": "collection-links",
+    "section_Bm7BbW": {
+      "type": "section",
       "blocks": {
-        "link": {
-          "type": "_collection-link",
-          "static": true,
+        "text_fecPNj": {
+          "type": "text",
+          "name": "t:names.heading",
           "settings": {
-            "show_count": false
+            "text": "<h2>Current Drop</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "blocks": {
-            "title": {
-              "type": "_inline-collection-title",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "font": "var(--font-heading--family)",
-                "weight": "700",
-                "line_height": "normal",
-                "letter_spacing": "loose",
-                "case": "none"
-              },
-              "blocks": {}
-            },
-            "image": {
-              "type": "_image",
-              "disabled": true,
-              "static": true,
-              "settings": {
-                "height": "medium",
-                "ratio": "portrait",
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
+          "blocks": {}
+        },
+        "text_3x8pRN": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Meet Bexel !! Bexel was designed from nature inspired lamp with soft warm feeling! </p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "block_order": []
+          "blocks": {}
+        },
+        "button_gHCeYW": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/drops",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
-      "name": "t:names.collection_links_text",
+      "block_order": [
+        "text_fecPNj",
+        "text_3x8pRN",
+        "button_gHCeYW"
+      ],
+      "name": "t:names.rich_text_section",
       "settings": {
-        "collection_list": [
-          "drops"
-        ],
-        "layout": "text",
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 25,
         "section_width": "page-width",
-        "alignment": "center",
-        "image_position": "right",
+        "section_height": "small",
+        "section_height_custom": 50,
         "color_scheme": "",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     },
     "marquee_qBVqkH": {
@@ -233,7 +286,7 @@
   "order": [
     "main",
     "media_with_content_xi8QYz",
-    "collection_links_3irxgN",
+    "section_Bm7BbW",
     "marquee_qBVqkH"
   ]
 }
