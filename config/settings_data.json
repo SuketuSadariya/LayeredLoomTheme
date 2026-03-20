@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "{{ shop.brand.logo }}",
-    "logo_height": 50,
+    "logo": "shopify://shop_images/LL_Logo_WText.png",
+    "logo_height": 75,
     "logo_height_mobile": 50,
     "favicon": "shopify://shop_images/LayereLoomLogo_TBG.png",
     "type_body_font": "nunito_sans_n5",
