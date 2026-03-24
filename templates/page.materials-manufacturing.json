@@ -1559,7 +1559,7 @@
                   "settings": {
                     "image": "shopify://shop_images/Low_cost_AM.jpg",
                     "link": "",
-                    "image_ratio": "adapt",
+                    "image_ratio": "square",
                     "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
@@ -1580,7 +1580,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Budget Friendly</h2>",
+                    "text": "<h2>No Hidden Fees/Teriffs</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
