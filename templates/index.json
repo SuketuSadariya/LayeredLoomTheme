@@ -739,6 +739,7 @@
           "type": "_layered-slide",
           "settings": {
             "media_type_1": "image",
+            "image_1": "shopify://shop_images/Drop_1.jpg",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -768,8 +769,8 @@
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font": "var(--font-heading--family)",
+                "font_size": "1.125rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -844,7 +845,7 @@
         "corner_radius": 0,
         "border_width": 1,
         "drop_shadow": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "padding-block-start": 10,
         "padding-block-end": 10
       }
