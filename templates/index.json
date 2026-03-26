@@ -846,7 +846,7 @@
         "corner_radius": 0,
         "border_width": 1,
         "drop_shadow": true,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "padding-block-start": 10,
         "padding-block-end": 10
       }
