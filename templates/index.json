@@ -470,11 +470,12 @@
           "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/Designed_For_Future.png",
             "link": "",
+            "video": "shopify://files/videos/PLA_Spool_In_Cornfield.mp4",
             "video_loop": true,
-            "video_autoplay": false,
+            "video_autoplay": true,
             "image_position": "cover",
             "video_position": "cover"
           },
@@ -509,7 +510,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Learn More",
-                "link": "shopify://pages/about-us",
+                "link": "shopify://pages/our-process",
                 "open_in_new_tab": false,
                 "style_class": "link",
                 "width": "fit-content",
@@ -858,7 +859,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
-            "image": "shopify://shop_images/Designed_For_Future.png",
+            "image": "shopify://shop_images/Hand_Work.png",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -896,7 +897,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Learn More",
-                "link": "shopify://collections/all",
+                "link": "shopify://pages/about-us",
                 "open_in_new_tab": false,
                 "style_class": "link",
                 "width": "fit-content",
@@ -916,7 +917,7 @@
       "name": "t:names.editorial_jumbo_text",
       "settings": {
         "media_position": "left",
-        "media_width": "wide",
+        "media_width": "medium",
         "media_height": "60svh",
         "section_width": "full-width",
         "extend_media": true,
