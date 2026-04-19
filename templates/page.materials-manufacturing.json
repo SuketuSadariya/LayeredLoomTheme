@@ -204,7 +204,6 @@
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "video",
-        "image_1": "shopify://shop_images/Designed_For_Future.png",
         "video_1": "shopify://files/videos/PLA_Spool_In_Cornfield.mp4",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
@@ -1007,7 +1006,6 @@
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "video",
-        "image_1": "shopify://shop_images/Designed_For_Future.png",
         "video_1": "shopify://files/videos/Flow_delpmaspu_ (1).mp4",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
@@ -1580,7 +1578,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>No Hidden Fees/Teriffs</h2>",
+                    "text": "<h2>No Hidden Fees/Tariffs</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
