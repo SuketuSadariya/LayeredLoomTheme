@@ -149,7 +149,7 @@
                 "text_GVyAUN": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>If you have issues with your product please contact us at 3dlayeredcreations@gmail.com. we always try to recycle so we will send you parts and instructions if we can. Warranty is only on 3d printed parts that are manufactured by Layered Loom. </p>",
+                    "text": "<p>If you have issues with your product please contact us at contact@layeredloom.studio we always try to recycle so we will send you parts and instructions if we can. Warranty is only on 3d printed parts that are manufactured by Layered Loom. </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -495,7 +495,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Contact us at 3dlayeredcreations@gmail.com withing 14 days of receiving your product with a brief explanation. We only accept unaltered and unused products in their original packaging . </p>",
+                    "text": "<p>Contact us at contact@layeredloom.studio withing 14 days of receiving your product with a brief explanation. We only accept unaltered and unused products in their original packaging . </p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
